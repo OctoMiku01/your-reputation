@@ -2,14 +2,14 @@ name: build
 on:
   pull_request:
     branches:
-      - 1.[0-9]+*
-      - 1.[0-9]+.[0-9]+*
+      - main
+      - mc/*
 
 jobs:
   build:
     runs-on: ubuntu-24.04
     env:
-      JAVA_VERSION: '21'
+      JAVA_VERSION: '25'
     steps:
       - name: checkout repository
         uses: actions/checkout@v4
