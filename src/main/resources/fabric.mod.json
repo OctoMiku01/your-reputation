@@ -22,10 +22,10 @@
   "mixins": ["reputation.mixins.json"],
 
   "depends": {
-    "fabricloader": ">=0.16.10",
-    "minecraft": "~1.21.5",
-    "java": ">=21",
+    "fabricloader": ">=${loader_version}",
+    "minecraft": "~${minecraft_version}",
+    "java": ">=25",
     "fabric-api": "*",
-    "jade": "*"
+    "jade": "~${minecraft_version}"
   }
 }

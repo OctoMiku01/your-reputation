@@ -2,27 +2,27 @@ package atonkish.reputation.nbt;
 
 import java.util.UUID;
 
-import net.minecraft.nbt.NbtElement;
-import net.minecraft.nbt.NbtIntArray;
-import net.minecraft.util.Uuids;
+import net.minecraft.nbt.Tag;
+import net.minecraft.nbt.IntArrayTag;
+import net.minecraft.core.UUIDUtil;
 
 public final class ModNbtHelper {
-    public static NbtIntArray fromUuid(UUID uuid) {
-        return new NbtIntArray(Uuids.toIntArray(uuid));
+    public static IntArrayTag fromUuid(UUID uuid) {
+        return new IntArrayTag(UUIDUtil.uuidToIntArray(uuid));
     }
 
-    public static UUID toUuid(NbtElement element) {
-        if (element.getNbtType() != NbtIntArray.TYPE) {
+    public static UUID toUuid(Tag element) {
+        if (element.getType() != IntArrayTag.TYPE) {
             throw new IllegalArgumentException(
-                    "Expected UUID-Tag to be of type " + NbtIntArray.TYPE.getCrashReportName() + ", but found "
-                            + element.getNbtType().getCrashReportName() + ".");
+                    "Expected UUID-Tag to be of type " + IntArrayTag.TYPE.getPrettyName() + ", but found "
+                            + element.getType().getPrettyName() + ".");
         } else {
-            int[] is = ((NbtIntArray) element).getIntArray();
+            int[] is = ((IntArrayTag) element).getAsIntArray();
             if (is.length != 4) {
                 throw new IllegalArgumentException(
                         "Expected UUID-Array to be of length 4, but found " + is.length + ".");
             } else {
-                return Uuids.toUuid(is);
+                return UUIDUtil.uuidFromIntArray(is);
             }
         }
     }
