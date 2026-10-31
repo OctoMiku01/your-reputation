@@ -5,11 +5,12 @@
 
   "name": "Your Reputation",
   "description": "a Jade plugin that displays your reputation on a tooltip with each villager.",
-  "authors": ["Aton-Kish"],
+  "authors": ["OctoMiku01"],
+  "contributors": ["Aton-Kish"],
   "contact": {
-    "homepage": "https://github.com/Aton-Kish/your-reputation",
-    "sources": "https://github.com/Aton-Kish/your-reputation",
-    "issues": "https://github.com/Aton-Kish/your-reputation/issues"
+    "homepage": "https://github.com/OctoMiku01/your-reputation",
+    "sources": "https://github.com/OctoMiku01/your-reputation",
+    "issues": "https://github.com/OctoMiku01/your-reputation/issues"
   },
 
   "license": "MIT",
